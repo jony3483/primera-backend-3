@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-mongoose.set('strictQuery', false);
 import cookieParser from 'cookie-parser';
 
 import usersRouter from './routes/users.router.js';
@@ -11,6 +10,8 @@ import mocksRouter from "./routes/mocks.router.js";
 
 const app = express();
 const PORT = process.env.PORT||8080;
+
+mongoose.set('strictQuery', false);
 const connection = mongoose.connect(`mongodb+srv://coderhouse69990:coderhouse@cluster0.rxgyfzi.mongodb.net/backen3?retryWrites=true&w=majority&appName=Cluster0`)
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('Error connecting to MongoDB:', err));
