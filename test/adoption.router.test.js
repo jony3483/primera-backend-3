@@ -1,9 +1,12 @@
 import chai from 'chai';
+import chaiHttp from 'chai-http';
 import app from '../src/app.js';
 import  { expect } from 'chai';
 
 
 
+
+chai.use(chaiHttp);
 
 describe('Adoption Router Tests', () => {
     let validUserId;
